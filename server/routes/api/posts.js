@@ -35,6 +35,7 @@ async function loadPostsCollection() {
     });
 
     return client.db('vue_express').collection('posts');
+    console.log("Connected");
 }
 
 
