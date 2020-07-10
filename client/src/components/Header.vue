@@ -18,13 +18,6 @@
         </v-list-item-avatar>
 
         <v-list-item-title>Pedro Martins</v-list-item-title>
-
-        <v-btn
-          icon
-          @click.stop="mini = !mini"
-        >
-          <v-icon>mdi-chevron-left</v-icon>
-        </v-btn>
       </v-list-item>
 
       <v-divider></v-divider>
@@ -33,6 +26,7 @@
         <v-list-item
           v-for="item in items"
           :key="item.title"
+          :to="item.route"
           link
         >
           <v-list-item-icon>
@@ -54,9 +48,9 @@
       return {
         drawer: true,
         items: [
-          { title: 'Home', icon: 'mdi-home-city' },
-          { title: 'My Account', icon: 'mdi-account' },
-          { title: 'Users', icon: 'mdi-account-group-outline' },
+          { title: 'Mapa', icon: 'mdi-map', route: '/' },
+          { title: 'Administração', icon: 'mdi-office-building', route: '/about' },
+          { title: 'Conta', icon: 'mdi-account', route: '/conta' }
         ],
         mini: true,
       }
