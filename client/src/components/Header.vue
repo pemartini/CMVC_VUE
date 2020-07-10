@@ -1,7 +1,5 @@
 <template>
-  <v-card
-  height="100%"
-  class="mx-auto"
+  <v-card class="overflow-hidden"
   >
     <v-navigation-drawer
       v-model="drawer"
@@ -12,17 +10,24 @@
       permanent
       dark
     >
-      <v-list-item class="px-2">
-        <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/81.jpg"></v-img>
-        </v-list-item-avatar>
+       <v-list
+          dense
+          nav
+          class="py-0"
+        >
+          <v-list-item two-line :class="'mini' && 'px-0'">
+            <v-list-item-avatar>
+              <img src="https://randomuser.me/api/portraits/men/81.jpg">
+            </v-list-item-avatar>
 
-        <v-list-item-title>Pedro Martins</v-list-item-title>
-      </v-list-item>
+            <v-list-item-content>
+              <v-list-item-title>Application</v-list-item-title>
+              <v-list-item-subtitle>Subtext</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
 
-      <v-divider></v-divider>
+          <v-divider></v-divider>
 
-      <v-list dense>
         <v-list-item
           v-for="item in items"
           :key="item.title"
@@ -55,5 +60,10 @@
         mini: true,
       }
     },
+    computed: {
+        bg () {
+          return this.background ? '../assets/viana_vertical.jpg' : undefined
+        }
+      }
   }
 </script>
